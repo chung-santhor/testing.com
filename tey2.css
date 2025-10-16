@@ -1,0 +1,325 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  /* hide scroll initially */
+  font-family: Arial, sans-serif;
+}
+
+/* Background video */
+video.background-video {
+  position: fixed;
+  /* center the video in the viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* ensure it always covers the viewport */
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: 100dvh;
+  object-fit: cover;
+  object-position: center center;
+  z-index: -1;
+}
+
+/* Start button image */
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  z-index: 1;
+}
+
+.content img {
+  max-width: 300px;
+  width: 80%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: zoomPulse 4s infinite ease-in-out;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 1.5s ease;
+}
+
+.content img:hover {
+  transform: scale(1.15);
+}
+
+.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes zoomPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Slide 2 Background */
+#newBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  pointer-events: none;
+}
+
+#newBackground.show {
+  opacity: 1;
+}
+
+/* Slide 2 Content */
+#frontText {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.22);
+  color: #333;
+  padding: 3vw;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 2;
+}
+
+#frontText h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3rem, 5vw, 3rem);
+  color: #b8860b;
+  margin-bottom: 1vw;
+}
+
+#frontText h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #b8860b;
+  margin-bottom: 1vw;
+}
+
+.divider {
+  width: 15vw;
+  max-width: 120px;
+  margin: 0 auto 2vw auto;
+  border-bottom: 3px solid #b8860b;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "❀";
+  position: absolute;
+  top: -14px;
+  font-size: 1.2rem;
+  color: #b8860b;
+}
+
+.divider::before {
+  left: -20px;
+}
+
+.divider::after {
+  right: -20px;
+}
+
+/* Highlight image */
+.highlight-img {
+  width: 90%;
+  max-width: 250px;
+  height: auto;
+  border: 10px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  border-radius: 12px;
+  transition: border-color 0.6s ease, box-shadow 0.6s ease;
+  margin: 2vw auto;
+  cursor: pointer;
+  display: block;
+}
+
+.below-img {
+  width: 70%;
+  max-width: 800px;
+  height: auto;
+  margin: 1.5vw auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Wedding Collage */
+.wedding-collage {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: 150px 150px 150px;
+  gap: 1vw;
+  max-width: 90vw;
+  margin: 3vw auto;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2vw;
+  border-radius: 15px;
+}
+
+.wedding-collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 4px solid #fff;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.wedding-collage img:hover {
+  transform: scale(1.03);
+  border-color: #ffd700;
+}
+
+/* Specific grid items */
+.photo1 {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+}
+
+.photo2 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.photo3 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.photo4 {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.photo5 {
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+}
+
+.photo3 h3 {
+  font-size: clamp(1.5rem, 4vw, 2.3rem);
+}
+
+.photo3 p {
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
+
+/* Image Overlay */
+#imageOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#imageOverlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+#guestSection {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2vw;
+  margin: 3vw auto;
+  max-width: 700px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#guestSection input,
+#guestSection textarea {
+  width: 80%;
+  max-width: 500px;
+  padding: 1vw;
+  margin: 1vw 0;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#guestSection button {
+  padding: 1vw 2vw;
+  font-size: 1rem;
+  background-color: #b8860b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#guestSection button:hover {
+  background-color: #a0522d;
+}
+
+.single-comment {
+  background: #fff4e6;
+  border: 1px solid #f0c080;
+  padding: 1vw;
+  margin: 1vw auto;
+  border-radius: 8px;
+  text-align: left;
+  max-width: 500px;
+}
+
+.single-comment h3 {
+  margin: 0 0 0.5vw 0;
+  color: #8b4513;
+}
+
+.single-comment p {
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .wedding-collage {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 120px 120px 120px;
+    gap: 2vw;
+  }
+
+  .photo5 {
+    grid-column: 1 / 4;
+  }
+
+  .highlight-img,
+  .below-img {
+    max-width: 90vw;
+  }
+}

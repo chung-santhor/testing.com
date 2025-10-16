@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wedding Vatey and Hoyter</title>
+  <link rel="stylesheet" href="tey2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Video & Music -->
+  <video id="bgVideo" muted playsinline class="background-video">
+    <source src="image/vdoo.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <audio id="bgMusic" preload="auto" loop>
+    <source src="image/song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <img id="newBackground" src="image/love.WEBP" alt="New Background" />
+
+  <!-- Slide 2 -->
+  <div id="frontText" tabindex="0">
+    <h1>Special Day</h1>
+    <div class="divider"></div>
+    <img src="image/chi-chi.png" alt="Below Image" class="below-img">
+    <img src="image/tey1.JPG" alt="Highlight 1" class="highlight-img" onclick="openOverlay(this)">
+    <img src="image/chi-chi.png" alt="Below Image" class="below-img">
+    <div class="divider"></div>
+    <h3>Invite To Wedding</h3>
+    <div class="divider"></div>
+    <img src="image/a1.png" alt="Highlight 2" class="highlight-img" onclick="openOverlay(this)">
+    <div class="divider"></div>
+    <h3>Wedding Memories</h3>
+    <div class="divider"></div>
+    <div class="wedding-collage">
+      <img src="image/t1.JPG" alt="Couple Kiss" class="photo1" onclick="openOverlay(this)">
+      <img src="image/t2.JPG" alt="Bride & Groom" class="photo2" onclick="openOverlay(this)">
+      <div class="photo3"><h3>The Wedding</h3><p>Love • Joy • Forever</p></div>
+      <img src="image/t3.JPG" alt="Rings" class="photo4" onclick="openOverlay(this)">
+      <img src="image/t4.JPG" alt="Ceremony" class="photo5" onclick="openOverlay(this)">
+    </div>
+    <!--Planning Section -->
+  <div class="divider"></div>
+  <h3>Planning</h3>
+  <div class="divider"></div>
+  <img src="image/b1.png" alt="Highlight 1" class="highlight-img" onclick="openOverlay(this)">
+    <!--walking-->
+    <div class="divider"></div>
+  <h3>Home</h3>
+  <div class="divider"></div>
+  <img src="image/c1.png" alt="Highlight 1" class="highlight-img" onclick="openOverlay(this)">
+  <!-- Map Section -->
+  <h3>Map</h3>
+  <div class="divider"></div>
+  <img src="image/d1.png" alt="Highlight 1" class="highlight-img" onclick="openOverlay(this)">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.855936988487!2d103.1963793748439!3d13.108311487219757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31054a20766e7d5b%3A0xaa523036ad703e7d!2sStung%20Sangke%20Theater!5e0!3m2!1sen!2skh!4v1760256873958!5m2!1sen!2skh" width="340" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <!--Thank you-->
+    <div class="divider"></div>
+  <h3>Thank You</h3>
+  <div class="divider"></div>
+  <img src="image/e1.png" alt="Highlight 1" class="highlight-img" onclick="openOverlay(this)">
+  <!-- Guest Comment Section -->
+  <div id="guestSection">
+    <h3>WISH</h3>
+    <input type="text" id="guestName" placeholder="Your Name"><br>
+    <textarea id="guestComment" placeholder="Your Comment" rows="3"></textarea><br>
+    <button onclick="addGuestComment()">Send</button>
+    <div id="commentsContainer"></div>
+  </div>
+
+    <div class="divider"></div>
+    <h3>THANK YOU</h3>
+    <img src="image/chi-chi.png" alt="Below Image" class="below-img">
+  </div>
+
+  <!-- Image Overlay -->
+  <div id="imageOverlay" onclick="closeOverlay()">
+    <img id="overlayImage" src="" alt="Full View">
+  </div>
+
+  <!-- Start Button -->
+  <div class="content">
+    <img src="image/no1.png" alt="Start Image" id="startBtn">
+  </div>
+<script src="tey.js"></script>
+
+</body>
+</html>
